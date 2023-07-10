@@ -99,5 +99,6 @@ def detect_cat_dog(url):
 
 
 if __name__ == "__main__":
-	api_endpoint = "http://127.0.0.1:8000/image_detection/cat_or_dog_image/"
+	# api_endpoint = "http://127.0.0.1:8000/image_detection/cat_or_dog_image/" # FOr local
+	api_endpoint = "http://192.168.2.141:31161/image_detection/cat_or_dog_image/" # FOr live
 	detect_cat_dog(url=api_endpoint)
