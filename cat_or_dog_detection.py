@@ -7,8 +7,10 @@ import cv2
 from api_thread import ApiCallThread
 from dotenv import dotenv_values
 import os
+from dotenv import load_dotenv
 
-config = dotenv_values(".env") # Load .env variables
+
+load_dotenv()  # take environment variables from .env.
 
 BACKEND_URL=os.getenv("BACKEND_URL")
 
