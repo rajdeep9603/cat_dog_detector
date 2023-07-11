@@ -6,6 +6,7 @@ import time
 import cv2
 from api_thread import ApiCallThread
 from dotenv import dotenv_values
+import os
 
 config = dotenv_values(".env") # Load .env variables
 
