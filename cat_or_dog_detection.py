@@ -5,7 +5,11 @@ import imutils
 import time
 import cv2
 from api_thread import ApiCallThread
+from dotenv import dotenv_values
 
+config = dotenv_values(".env") # Load .env variables
+
+BACKEND_URL=os.getenv("BACKEND_URL")
 
 def detect_cat_dog(url):
 	# initialize the list of class labels MobileNet SSD was trained to
@@ -100,5 +104,5 @@ def detect_cat_dog(url):
 
 if __name__ == "__main__":
 	# api_endpoint = "http://127.0.0.1:8000/image_detection/cat_or_dog_image/" # FOr local
-	api_endpoint = "http://192.168.2.141:31161/image_detection/cat_or_dog_image/" # FOr live
+	api_endpoint = f"{BACKEND_URL}/image_detection/cat_or_dog_image/" # FOr live
 	detect_cat_dog(url=api_endpoint)
