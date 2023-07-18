@@ -2,3 +2,4 @@
 MobileNetSSD_deploy.caffemodel
 venv
 .env
+__pycache__/*
