@@ -65,7 +65,7 @@ def detect_cat_dog(url):
 				# 8 for cat and 12 for dog
 				if _idx in [8, 12]:
 					new_time = time.time()
-					if (new_time - snap_time) >= api_call_every and (confidence*100) > 50:
+					if (new_time - snap_time) >= api_call_every and (confidence*100) > 90:  # Call API as per confidence level
 						ApiCallThread(_idx, frame, confidence, url).start()
 						snap_time = time.time()
 					if _idx == 8:  # For cat detection
@@ -107,5 +107,5 @@ def detect_cat_dog(url):
 
 if __name__ == "__main__":
 	# api_endpoint = "http://127.0.0.1:8000/image_detection/cat_or_dog_image/" # FOr local
-	api_endpoint = f"{BACKEND_URL}/image_detection/cat_or_dog_image/" # FOr live
+	api_endpoint = f"{BACKEND_URL}/image_detection/cat_or_dog_image/" # For live
 	detect_cat_dog(url=api_endpoint)
