@@ -65,7 +65,7 @@ def detect_cat_dog(url):
 				# 8 for cat and 12 for dog
 				if _idx in [8, 12]:
 					new_time = time.time()
-					if (new_time - snap_time) >= api_call_every and (confidence*100) > 70:  # Call API as per confidence level
+					if (new_time - snap_time) >= api_call_every and (confidence*100) > 50:  # Call API as per confidence level
 						ApiCallThread(_idx, frame, confidence, url).start()
 						snap_time = time.time()
 					if _idx == 8:  # For cat detection
